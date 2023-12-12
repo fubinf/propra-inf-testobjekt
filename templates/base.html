@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- left area -->
+            <div class="col" id="main-content">
+                {% block main_content %}{% endblock %}
+            </div>
+
+            <!-- right area -->
+            <div class="col-auto" id="user-stories">
+                <div id="toggle-area">
+                    <i id="toggle-stories">☰</i>
+                </div>
+                <div id="user-story">
+                    <!-- user stories in tabs -->
+                    <ul class="nav nav-tabs" id="userStoryTabs" role="tablist">
+                        {% for story in user_stories %}
+                        <li class="nav-item">
+                            <a class="nav-link {{ 'active' if loop.first else '' }}" id="user-story-{{ story.id }}-tab" data-toggle="tab" href="#user-story-{{ story.id }}" role="tab" aria-controls="user-story-{{ story.id }}" aria-selected="{{ 'true' if loop.first else 'false' }}">User Story {{ story.id }}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>                    
+
+                    <div class="tab-content" id="userStoryTabsContent" style="margin-top: 5%;">
+                        {% for story in user_stories %}
+                        <div class="tab-pane fade {{ 'show active' if loop.first else '' }}" id="user-story-{{ story.id }}" role="tabpanel" aria-labelledby="user-story-{{ story.id }}-tab">
+                            <div class="user-story">
+                                <p>{{ story.title | safe }}</p>
+                                <p>{{ story.description | safe }}</p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $('#toggle-stories').click(function() {
+                $('#user-stories').toggleClass('collapsed');
+            });
+        });
+    </script>
+</body>
+</html>

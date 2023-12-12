@@ -1,0 +1,81 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f7f7f7;
+}
+
+.form-signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+}
+
+.form-signin input[type="text"],
+.form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-radius: 0.25rem;
+}
+
+.form-profile {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    padding-left: 0;
+}
+
+.div-profile {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+}
+
+.form-profile input[type="password"] {
+    margin-bottom: 10px;
+    border-radius: 0.25rem;
+}
+
+.container-fluid, .row {
+    height: 100vh;
+}
+
+#toggle-area {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: white;
+    padding: 10px;
+    cursor: pointer;
+    width: 50px;
+}
+
+#user-stories {
+    background-color: white;
+    margin-left: 50px;
+    width: 50%;
+}
+
+#user-story {
+    background-color: white;
+    margin-left: 50px;
+    margin-top: 5%;
+    width: 70%;
+}
+
+#user-stories.collapsed {
+    width: 0;
+    overflow: hidden;
+}
+
+#main-content {
+    transition: width 2.5s ease-in-out;
+    margin-top: 3%;
+}
+
+#main-content.expanded {
+    width: 100%;
+}

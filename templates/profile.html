@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}Profil{% endblock %}
+
+{% block main_content %}
+<div class="div-profile">
+    <h3>Hallo {{ user.username }}</h3>
+    <img class="styled-element" src="{{ url_for('static', filename='uploads/profile_image.jpg') }}" alt="Benutzerbild">
+
+    <h3>Profilbild ändern</h3>
+    <form class="form-profile" action="/upload-image" method="post" enctype="multipart/form-data">
+        <label for="profile_image">Profilbild hochladen:</label>
+        <input type="file" name="profile_image" id="profile_image">
+        <button type="submit" class="btn btn-primary">Hochladen</button>
+    </form>
+
+    <h3>Passwort ändern</h3>
+    <form class="form-profile" action="/change-password" method="post">
+        <div>
+            <input type="password" class="form-control" name="password" id="password" placeholder="Neues Passwort">
+        </div>
+        <div>
+            <input type="password" class="form-control" name="confirm_password" id="confirm_password" placeholder="Passwort bestätigen">
+        </div>
+        <button type="submit" class="btn btn-secondary">Passwort ändern</button>
+    </form>
+
+    <h3>Abmelden</h3>
+    <a href="/logout" class="btn btn-danger" style="margin: auto;">Abmelden</a>
+</div>
+{% endblock %}

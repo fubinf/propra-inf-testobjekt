@@ -1,0 +1,18 @@
+[
+    {
+      "title": "Als Nutzer möchte ich mich anmelden können, um Zugriff auf mein Profil zu haben.",
+      "description": "<b>Akzeptanzkriterien:</b> <nl> <ol> <li>Der Benutzer <i>Alice</i> kann sich mit dem Passwort <i>password</i> anmelden</li> <li>Anmdeldebutton vorhanden</li> </ol> <b>Out of Scope:</b> Alle Passwörter können bei Bedarf <a href='/reset-password'>hier</a> zurück gesetzt werden."
+    },
+    {
+      "title": "Als Nutzer möchte ich mich abmelden können, um meine Verbindung sicher zu trennen.",
+      "description": "<b>Akzeptanzkriterien:</b> <nl> <ol> <li>Abmeldebutton vorhanden</li> <li>Landingpage: Loginseite</li> </ol>"
+    },
+    {
+      "title": "Als angemeldeter Nutzer möchte ich mich mein Passwort ändern können, um mein Profilzugriff zu sichern",
+      "description": "<b>Akzeptanzkriterien:</b> <nl> <ol> <li>Nutzer kann sein neues Passwort selber vergeben</li> <li>Das neue Passwort muss bestätigt werden</li> <li>Das neue Passwort muss mindesten 10 Zeichen lang sein</li> </ol>"
+    },
+    {
+      "title": "Als angemeldeter Nutzer möchte ich mich mein Profilbild ändern können, um mein visuelles Auftreten aktuell zu halten.",
+      "description": "<b>Akzeptanzkriterien:</b> <nl> <ol> <li>Der Nutzer kann nur ein Bild gleichzeitig hochladen</li> <li>Das vorhandene Bild wird ersetzt und gelöscht</li> <li>Es können nur JPEG verwendet werden</li> </ol>"
+    }
+  ]
