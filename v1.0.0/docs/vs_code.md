@@ -12,12 +12,12 @@ TODO_Ruhe: Schritte erläutern
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python: Flask",
+            "name": "Testobjekt 1.0.0",
             "type": "python",
             "request": "launch",
             "module": "flask",
             "env": {
-                "FLASK_APP": "app.py",
+                "FLASK_APP": "v1.0.0/app.py",
                 "FLASK_ENV": "development",
                 "FLASK_DEBUG": "0"
             },
