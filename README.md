@@ -10,10 +10,13 @@
     - [Ungeeignete Anwendungsbereiche](#ungeeignete-anwendungsbereiche)
     - [Welche Versionen gibt es](#welche-versionen-gibt-es)
     - [Besonderheiten des Testobjekts](#besonderheiten-des-testobjekts)
-      - [Programmiersprachen und Frameworks](#programmiersprachen-und-frameworks)
+    - [Programmiersprachen und Frameworks](#programmiersprachen-und-frameworks)
     - [Datenbanken](#datenbanken)
-      - [Wie kommen User Stories udn Nutzer in das Testobjekt](#wie-kommen-user-stories-udn-nutzer-in-das-testobjekt)
+    - [Wie kommen User Stories und Nutzer in das Testobjekt](#wie-kommen-user-stories-und-nutzer-in-das-testobjekt)
   - [Anleitung zur Nutzung](#anleitung-zur-nutzung)
+    - [Installation der Abhängigkeiten](#installation-der-abhängigkeiten)
+    - [Starten der Anwendung](#starten-der-anwendung)
+    - [Zugriff auf die Anwendung](#zugriff-auf-die-anwendung)
   - [Hinweise zur Weiterentwicklung](#hinweise-zur-weiterentwicklung)
   - [Support und Kontakt](#support-und-kontakt)
 
@@ -48,7 +51,7 @@ Eine Besonderheit des Testobjekts ist die Integration von User Stories, die eine
 
 Auf der anderen Seite bietet das Testobjekt speziell für Lern- und Übungszwecke konzipierte Funktionen. Übungsaufgaben beziehen sich auf diesen Anwendungsbereich.
 
-#### Programmiersprachen und Frameworks
+### Programmiersprachen und Frameworks
 
 Um den Lerninhalt des Programmierpraktikums (ProPra) effektiv zu unterstützen, wird das Testobjekt unter Verwendung von Python in der aktuellsten Version entwickelt. Durch den Einsatz des Python-Webframeworks Flask erstellen wir eine Web-Applikation, die speziell auf die im ProPra definierten Aufgaben und Anforderungen abgestimmt ist.
 
@@ -70,7 +73,7 @@ Die Datenbankdateien werden im Verzeichnis instance/ gespeichert. Diese Struktur
 
 Durch diese Konfiguration stellen wir sicher, dass die Testumgebung jederzeit reproduzierbare und konsistente Ergebnisse liefert, was für die Zuverlässigkeit und Genauigkeit der Testautomatisierung von entscheidender Bedeutung ist.
 
-#### Wie kommen User Stories udn Nutzer in das Testobjekt
+### Wie kommen User Stories und Nutzer in das Testobjekt
 
 Die Integration von User Stories und Nutzer in das Testobjekt erfolgt durch einen strukturierten und automatisierten Prozess. Zunächst werden die User Stories in einer JSON-Datei gespeichert, die sich im Verzeichnis 'data' befindet. Diese JSON-Datei dient als zentrale Quelle für die Testdaten und enthält alle notwendigen Informationen zu den User Stories oder Nutzern, wie etwa Beschreibungen, Akzeptanzkriterien und Nutzerdaten.
 
@@ -82,12 +85,53 @@ Die Verwendung einer JSON-Datei als Quelle für die Daten bietet mehrere Vorteil
 
 ## Anleitung zur Nutzung
 
-TODO_Ruhe: Erläutern
+Bevor Sie mit der Nutzung des Testobjekts beginnen, stellen Sie sicher, dass Python 3 und das Web-Framework Flask in der neuesten Version auf Ihrem System installiert sind. Diese sind grundlegende Voraussetzungen für den Betrieb der Anwendung.
+
+### Installation der Abhängigkeiten
+
+Jede Version des Testobjekts kann spezifische Abhängigkeiten haben. Daher verfügt jede Version über eine eigene requirements.txt-Datei, die alle notwendigen Pakete auflistet. Führen Sie den folgenden Befehl aus, um die erforderlichen Pakete für die gewählte Version zu installieren:
+
+```shell
+pip install -r v[Version]/requirements.txt 
+```
+
+Ersetzen Sie [Version] durch 1.0.0, 1.1.0 oder 3.0.0, je nachdem, welche Version Sie verwenden möchten.
+
+### Starten der Anwendung
+
+Nach der Installation der Abhängigkeiten können Sie die Anwendung mit folgendem Befehl starten:
+
+```shell
+flask --app v[Version]/app run
+```
+
+Ersetzen Sie erneut [Version] durch die gewünschte Version. Zum Beispiel:
+
+- Für Version 1.0.0: flask --app v1.0.0/app run
+- Für Version 1.1.0: flask --app v1.1.0/app run
+- Für Version 3.0.0: flask --app v3.0.0/app run
+
+### Zugriff auf die Anwendung
+
+Nachdem die Anwendung gestartet wurde, können Sie darauf zugreifen, indem Sie die folgende URL in Ihrem Webbrowser eingeben:
+
+```URL
+http://127.0.0.1:5000
+```
+
+Dies öffnet die Hauptseite der Anwendung, auf der Sie mit der Interaktion beginnen können.
 
 ## Hinweise zur Weiterentwicklung
 
-TODO_Ruhe
+Die Testobjekte unterliegen einer kontinuierlichen Weiterentwicklung, wobei sowohl neue Features zur Unterstützung der Testautomatisierungsübungen als auch systemrelevante Änderungen implementiert werden können. Unabhängig von der Art der Änderung ist es essenziell, die Dokumentation stets aktuell zu halten. Folgende Punkte sollten beachtet werden:
+
+- Jede Änderung oder Ergänzung am Testobjekt sollte von einer entsprechenden Aktualisierung der Dokumentation begleitet sein. Dies umfasst technische Details, Benutzeranleitungen und Beschreibungen neuer Features oder Veränderungen.
+- Wichtige Änderungen sollten innerhalb des Teams und an die Nutzer kommuniziert werden. Dies hilft dabei, alle Beteiligten auf dem Laufenden zu halten und das Verständnis für die Entwicklung des Projekts zu fördern.
 
 ## Support und Kontakt
 
-TODO_Ruhe
+Falls Sie auf unerwartete Probleme oder Fehler in der Anwendung stoßen – abgesehen von den bewusst für Übungszwecke integrierten Störungen, die in den User Stories beschrieben sind –, laden wir Sie herzlich ein, dies über das GitHub Issue-System zu melden. Ihre Rückmeldungen sind für uns von großem Wert und tragen entscheidend zur kontinuierlichen Verbesserung des Testobjekts bei.
+
+Bitte beschreiben Sie das Problem so detailliert wie möglich, inklusive der Schritte, die zu dem Fehler geführt haben, sowie alle relevanten Informationen, die uns helfen könnten, das Problem zu reproduzieren und zu beheben. Jedes Issue wird sorgfältig geprüft und, falls notwendig, in den Entwicklungsprozess integriert, um eine schnelle und effektive Lösung zu gewährleisten. (Sollten Sie unsicher sein, wie ein Issue / Defect formuliert wird, nutzen Sie doch die Gelegenheit das daszu im ProPra umgestezte Thema kennenzulernen.)
+
+Ihr Engagement und Ihre Unterstützung sind essentiell für die Qualität und Zuverlässigkeit des Testobjekts. Wir schätzen jede Form von Feedback und freuen uns auf Ihre aktive Beteiligung an unserem Projekt.
